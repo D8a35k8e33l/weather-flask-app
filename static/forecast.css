@@ -1,0 +1,42 @@
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+.forecast-day {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+.temp-range {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+
+.temp-max {
+    color: #e74c3c;
+}
+
+
+.temp-min {
+    color: #3498db;
+}
+

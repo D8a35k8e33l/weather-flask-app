@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Прогноз погоды</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='forecast.css') }}">
+    </head>
+    <body>
+        <h1>Прогноз погоды на 7 дней</h1>
+        <p>Координаты: {{ latitude }}, {{ longitude }}</p>
+
+        <div class="forecast-container">
+            {% for day in forecast %}
+            <div class="forecast-day">
+                <h3>{{ day.date }}</h3>
+                <div class="temp-range">
+                    <span class="temp-max">↑ {{ day.temp_max }}°</span> / 
+                    <span class="temp-min">↓ {{ day.temp_min }}°</span>
+                </div>
+                <p>{{ day.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <a href="/" style="display: inline-block; margin-top: 20px;">← На главную</a>
+    </body>
+</html>
