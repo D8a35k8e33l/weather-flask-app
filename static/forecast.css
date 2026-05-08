@@ -1,13 +1,10 @@
 
-
-
 body {
     font-family: Arial, sans-serif;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
-
 
 .forecast-container {
     display: grid;
@@ -16,7 +13,6 @@ body {
     margin-top: 20px;
 }
 
-
 .forecast-day {
     border: 1px solid #ddd;
     padding: 15px;
@@ -24,19 +20,22 @@ body {
     text-align: center;
 }
 
-
 .temp-range {
     font-size: 1.2em;
     margin: 10px 0;
 }
 
-
 .temp-max {
     color: #e74c3c;
 }
-
 
 .temp-min {
     color: #3498db;
 }
 
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
