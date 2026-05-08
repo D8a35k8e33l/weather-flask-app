@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Парсер погоды</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    </head>
+    <body>
+        <h1>Парсер погоды</h1>
+        <p>Введите координаты или выберите город из списка:</p>
+
+        <form  method="get">
+            <div class="form-group">
+                <label for="lat">Широта:</label>
+                <input type="text" id="lat" name="lat" placeholder="55.7558" required>
+            </div>
+            <div class="form-group">
+                <label for="lon">Долгота:</label>
+                <input type="text" id="lon" name="lon" placeholder="37.6173" required>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" formaction="/weather">Получить погоду</button>
+                <button type="submit" formaction="/forecast">Получить прогноз на неделю</button>
+            </div>
+        </form>
+
+        <div class="city-list">
+            <button class="city-btn" onclick="setCoords(48.7194, 44.5018)">Волгоград</button>
+            <button class="city-btn" onclick="setCoords(55.7558, 37.6173)">Москва</button>
+            <button class="city-btn" onclick="setCoords(59.9343, 30.3351)">Санкт-Петербург</button>
+            <button class="city-btn" onclick="setCoords(51.5074, -0.1278)">Лондон</button>
+            <button class="city-btn" onclick="setCoords(48.8534, 2.3488)">Париж</button>
+            <button class="city-btn" onclick="setCoords(52.5244, 13.4105)">Берлин</button>
+            <button class="city-btn" onclick="setCoords(52.2298, 21.0118)">Варшава</button>
+            <button class="city-btn" onclick="setCoords(50.088, 14.4208)">Прага</button>
+            <button class="city-btn" onclick="setCoords(60.1695, 24.9354)">Хельсинки</button>
+            <button class="city-btn" onclick="setCoords(40.7128, -74.0060)">Нью-Йорк</button>
+            <button class="city-btn" onclick="setCoords(45.4112, -75.6981)">Оттава</button>
+            <button class="city-btn" onclick="setCoords(39.9075, 116.397)">Пекин</button>
+            <button class="city-btn" onclick="setCoords(35.6762, 139.6503)">Токио</button>
+        </div>
+
+        <script>
+            function setCoords(lat, lon) {
+                document.getElementById('lat').value = lat;
+                document.getElementById('lon').value = lon;
+            }
+        </script>
+    </body>
+</html>

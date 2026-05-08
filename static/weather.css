@@ -1,0 +1,39 @@
+
+
+
+body { 
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.weather-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+
+.weather-temperature {
+    font-size: 48px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+strong {
+    padding-right: 5px;
+}
+
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+
