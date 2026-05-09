@@ -48,7 +48,7 @@ def get_weather():
     except requests.exceptions.RequestException as e:
         return render_template('error.html', error=str(e)), 500
     except Exception as e:
-        return render_template('error.html', error="Непредвиденная ошибка"), 500
+        return render_template('error.html', error=f'Непредвиденная ошибка:\n{str(e)}'), 500
 
 
 @app.route('/forecast')
@@ -80,10 +80,7 @@ def get_forecast():
                 'temp_min': daily['temperature_2m_min'][i],
                 'description': get_weather_description(daily['weathercode'][i])
             })
-        return render_template('forecast.html',
-                                forecast=forecast_days,
-                                latitude=latitude,
-                                longitude=longitude)
+        return render_template('forecast.html', forecast=forecast_days, latitude=latitude, longitude=longitude)
 
     except Exception as e:
         return render_template('error.html', error=str(e)), 500
@@ -125,4 +122,3 @@ def get_weather_description(code):
 
 if __name__ == '__main__':
     app.run(debug=True, port=5055)
-
